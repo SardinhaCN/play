@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<body>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+             window.onload = function() {
+            try {
+                var url_string = (window.location.href).toLowerCase();
+                var url = new URL(url_string);
+        var URL_da_Thumbnail = url.searchParams.get("url_thumbnail");
+                var URL_do_Video = url.searchParams.get("url_video");
+                var URL_da_legenda = url.searchParams.get("url_legenda");
+                document.getElementById("INPUT").innerHTML = '<input type="url" id="URL da Thumbnail" value="'+ URL_da_Thumbnail + '"><input type="url" id="URL do Video" value="' + URL_do_Video + '"><input type="url" id="URL da legenda" value="' + URL_da_legenda +'">';
+            } catch (err) {
+                document.getElementById("ERRO").innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/LINK" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            }
+} 
+    </script>
+    <script src="js/script.js"  async></script>
+    
+    <div id="INPUT" class="video-input"></div>
+    <div id="VID"></div>
+    <div id="ERRO"></div>
+
+</body>
+</html>
